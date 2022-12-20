@@ -35,7 +35,7 @@ async function printPDF() {
   await page.goto('https://www.iwant2explore.com/agra-uttar-pradesh-2-nights-3-days-itinerary', {waitUntil: 'networkidle0'});
   
   
-  await page.waitForSelector('div > .grecaptcha-badge');
+  // await page.waitForSelector('div > .grecaptcha-badge');
   await page.waitForSelector('.det');
   // Query for an element handle.
   const elHandleArray = await page.$$('summary');
@@ -56,19 +56,19 @@ async function printPDF() {
 //   await element.dispose();
 //   await page.waitForSelector('.det');
 //   await page.click('.det');
-  await page.addStyleTag({ content: '::marker{color:black !important} .col-lg-8{width:100%} .content-section .section .container-fluid .container{margin:0;max-width:-webkit-fill-available} .activity{break-inside:avoid} .styles_scroll-to-top__2A70v {display:none} #headerId { display: none} .collapseContent { max-height: 100%} .readmore {display:none} .engagementSection{display:none} .widget{display:none} .footer{display:none} .footer-subscribe{display:none} .grecaptcha-badge{display:none;width:0px;height:0px} form{display:none}' })
+  await page.addStyleTag({ content: '.activity .row div{padding-right:0 !important;padding-left:0 !important} .quickinfoSection .row .col-12{width:25% !important} .quickinfoSection .row .col-sm-6{width:25% !important} ::marker{color:black !important} .col-lg-8{width:100%} .content-section .section .container-fluid .container{margin:0;max-width:-webkit-fill-available} .contentblock{break-inside:avoid} .overviewContent{break-inside:avoid} .day{break-inside:avoid} .activity{border:solid;border-width:thin !important; margin-top:20px !important;margin-bottom:30px !important;break-inside:avoid} .styles_scroll-to-top__2A70v {display:none} #headerId { display: none} .collapseContent { max-height: 100% !important} .readmore{display:none} .engagementSection{display:none} .widget{display:none} .footer{display:none} .footer-subscribe{display:none} .grecaptcha-badge{display:none !important;} form{display:none}' })
 
-  const pdf = await page.pdf({ path: 'tr.pdf', 
+  const pdf = await page.pdf({ path: 'tr_v52.pdf', 
                                 format: 'A4',
-                                displayHeaderFooter: true,
-                                headerTemplate: '<span style="font-size: 30px; width: 200px; height: 200px; background:none; color: white; margin: 20px;opacity:1"></span>',
-                                footerTemplate: '<span style="font-size: 30px; width: 50px; height: 50px; background-color: red; color:black; margin: 20px;"></span>',
-                                margin: { top: "50px"},
+                                // displayHeaderFooter: true,
+                                // headerTemplate: '<span style="font-size: 30px; width: 200px; height: 200px; background:none; color: white; margin: 20px;opacity:1"></span>',
+                                // footerTemplate: '<span style="font-size: 30px; width: 50px; height: 50px; background-color: red; color:black; margin: 20px;"></span>',
+                                margin: { top: "20px"},
                                 printBackground: true 
                               });
   // await page.pdf({ path: 'path/to/save/pdf', format: 'A4' });
 
-  // await browser.close();
-  // return ;
+  await browser.close();
+  return ;
 }
 printPDF()
