@@ -78,8 +78,8 @@ async function printPDF() {
                               });
   // await page.pdf({ path: 'path/to/save/pdf', format: 'A4' });
 
-  await browser.close();
-  return ;
+  // await browser.close();
+  // return ;
 }
 printPDF()
 // https://stackoverflow.com/questions/53167644/injecting-css-into-site-with-puppeteer
