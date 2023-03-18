@@ -16,10 +16,10 @@ console.log(msg);
 //             })
 //   .pipe(fs.createWriteStream('out.pdf'));
   
-const puppeteer = require('puppeteer')
+const puppeteer = require('puppeteer');
  
 async function printPDF() {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.setViewport({ width: 0, height: 0});
 //   let currentScreen = await page.evaluate(() => {
@@ -32,9 +32,9 @@ async function printPDF() {
 
 // await page.setViewport({ width: 0, height: 0});
 
-  var url = 'https://www.iwant2explore.com/prayagraj-1-night-2-days-allahabad-itinerary';
+  var url = 'https://www.iwant2explore.com/nainital-uttarakhand-2-nights-3-days-itinerary';
 
-  await page.goto(url, {waitUntil: 'networkidle0'});
+  await page.goto(url+"/?vacs=true", {waitUntil: 'networkidle0'});
   
   const url_sct = url.split("/").pop();
 
@@ -57,9 +57,9 @@ async function printPDF() {
     for (const el of elHandleArray) {
         await el.click()
       }
-      const allResultsSelector = 'summary';
+      // const allResultsSelector = 'summary';
 //   await page.waitForSelector(allResultsSelector);
-  await page.click(allResultsSelector);
+  // await page.click(allResultsSelector);
   // Dispose of handle
 //   await element.dispose();
 //   await page.waitForSelector('.det');
@@ -76,9 +76,10 @@ async function printPDF() {
                                 margin: { top: "20px"},
                                 printBackground: true 
                               });
+
   // await page.pdf({ path: 'path/to/save/pdf', format: 'A4' });
 
-  // await browser.close();
+  await browser.close();
   // return ;
 }
 printPDF()

@@ -1,3 +1,4 @@
+.watermark{position: absolute;top: 0;left: 0;bottom: 0;z-index: -1;transform: rotate(300deg);-webkit-transform: rotate(300deg);color: #c6afaf;}  
 
 .activity .row div{padding-right:0 !important;padding-left:0 !important} 
 
@@ -12,20 +13,13 @@
 
 .content-section .section .container-fluid .container{margin:0;max-width:-webkit-fill-available} 
 
-.btnSeeMore{display: none}
-/* .contentblock{break-inside:avoid}  */
+.contentblock{break-inside:avoid} 
 
-/* .overviewContent{break-inside:avoid}  */
+.overviewContent{break-inside:avoid} 
 
 .day{break-inside:avoid} 
 
-/* .daywiseSchedule{break-inside:avoid}  */
-
-.activity{border:solid;border-width:thin !important; margin-top:20px !important;margin-bottom:30px !important;} 
-
-img{
-    break-inside:avoid
-}
+.activity{border:solid;border-width:thin !important; margin-top:20px !important;margin-bottom:30px !important;break-inside:avoid} 
 
 .styles_scroll-to-top__2A70v {display:none} 
 
